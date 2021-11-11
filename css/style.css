@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background: #ededed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #d5d5d5;
+    min-height: 150px;
+    margin-bottom: 50px;
+    background: rgb(96, 163, 111);
+}
+
+header h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
+    color: #fff;
+    padding-top: 1rem;
+    padding-left: 5rem;
+}
+
+footer {
+    min-height: 50px;
+    background: rgb(96, 163, 111);
+    margin-top: auto;
+}
+
+nav {
+    margin-top: -50px;
+    background: #fff;
+    color: rgb(96, 163, 111);
+    height: 50px;
+    padding-top: 0.5rem;
+    padding-left: 5rem;
+}
+
+nav a, nav a:visited{
+    color: rgb(96, 163, 111);
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+#accueil {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form {
+    border-radius: 1rem;
+    background-color: #ededed;
+    width: 30%;
+    min-width: 300px;
+    padding: 1rem;
+    box-shadow:  20px 20px 60px #8e8e8e,
+             -20px -20px 60px #fff;
+}
+
+form * {
+    margin-bottom: 0.5rem;
+}
+
+fieldset {
+    width: 100%;
+}
+
+form h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    width:30%
+}
+
+fieldset input {
+    border: solid 1px #333;
+    width: 65%;
+    height: 1.75rem;
+    padding-left: 0.5rem;
+}
+
+.submit {
+    padding: 0.5em;
+    background: rgb(96, 163, 111);
+    border-radius: 1rem;
+    color: #fff;
+    
+}
+
+#nexus, #mailbox {
+    padding-left: 5rem;
+}
+
+#nexus h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#nexus button a, button a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#profil {
+    display: flex;
+    margin: 15px 0 30px 0;
+}
+
+#profil img {
+    margin-right: 30px;
+}
+
+#profil span {
+    font-weight: bold;
+}
+
+#nexus form {
+    margin-bottom: 20px;
+}
+
+#mailbox {
+    display: flex;
+}
+
+#mailbox main {
+    margin-left: 5rem;
+}
