@@ -28,8 +28,9 @@ include 'nav.php';
                 <label>Sujet</label>
                 <input name="sujet" required>
             </fieldset>
-            <textarea name="corps" required></textarea>
-            <input type="submit" value="Envoyer" name="envoyer">
+            <textarea  rows="10" cols="38" name="corps" required></textarea>
+            <input class="submit" type="submit" value="Envoyer" name="envoyer">
+            <div id="messageMail"></div>
         </form>
 
         <div id="lecture">

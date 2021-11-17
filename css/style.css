@@ -12,6 +12,14 @@ body {
     min-height: 100vh;
 }
 
+.flex {
+    display: flex;
+}
+
+.flexSpaceAround {
+    justify-content: space-around;
+}
+
 header {
     background: #d5d5d5;
     min-height: 150px;
@@ -42,7 +50,8 @@ nav {
     padding-left: 5rem;
 }
 
-nav a, nav a:visited{
+nav a,
+nav a:visited {
     color: rgb(96, 163, 111);
     text-decoration: none;
     margin-right: 1rem;
@@ -59,8 +68,7 @@ form {
     width: 30%;
     min-width: 300px;
     padding: 1rem;
-    box-shadow:  20px 20px 60px #8e8e8e,
-             -20px -20px 60px #fff;
+    box-shadow: 20px 20px 60px #8e8e8e, -20px -20px 60px #fff;
 }
 
 form * {
@@ -78,7 +86,7 @@ form h2 {
 
 label {
     display: inline-block;
-    width:30%
+    width: 30%
 }
 
 fieldset input {
@@ -93,10 +101,12 @@ fieldset input {
     background: rgb(96, 163, 111);
     border-radius: 1rem;
     color: #fff;
-    
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-#nexus, #mailbox {
+#nexus,
+#mailbox {
     padding-left: 5rem;
 }
 
@@ -105,7 +115,8 @@ fieldset input {
     margin-bottom: 1rem;
 }
 
-#nexus button a, button a:visited {
+#nexus button a,
+button a:visited {
     color: #fff;
     text-decoration: none;
 }
@@ -127,6 +138,11 @@ ul {
     font-weight: bold;
 }
 
+#cancelUpdateProfil,
+#cancelUpfatePassword {
+    width: fit-content;
+}
+
 #nexus form {
     margin-bottom: 20px;
 }
@@ -137,4 +153,15 @@ ul {
 
 #mailbox main {
     margin-left: 5rem;
+}
+
+#mailbox .message {
+    padding: 15px 20px;
+    margin: 10px 0 20px;
+    background-color: #f9f9f9;
+}
+
+#supression form a,
+#supression form a:visited {
+    text-decoration: none;
 }

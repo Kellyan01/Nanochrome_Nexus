@@ -20,22 +20,29 @@ include 'nav.php';
         </ul>
     </section>
     <div>
-        <form id="modifForm" action="" method="POST" style="display: none;">
+        <form id="modifForm" action="" method="POST" style="height: 0; overflow: hidden; padding: 0;">
             <fieldset><label>Nom</label><input id="modif_nom" name="modif_nom" required></fieldset>
             <fieldset><label>Prénom</label><input id="modif_prenom" name="modif_prenom" required></fieldset>
             <fieldset><label>Pseudo</label><input id="modif_pseudo" name="modif_pseudo" required></fieldset>
             <fieldset><label>Mail</label><input id="modif_mail" name="modif_mail" pattern="[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})" required></fieldset>
-            <input class="submit" type="submit" value="Modifier">
+            <div class="flex flexSpaceAround">
+                <input class="submit" type="submit" value="Modifier">
+                <div class="submit" id="cancelUpdateProfil">Annuler</div>
+            </div>
+            <div id="messageModifForm"></div>
         </form>
-        <form id="modifPassword" action="" method="POST" style="display: none;">
+        <form id="modifPassword" action="" method="POST" style="height: 0; overflow: hidden; padding: 0;">
             <fieldset><label>Ancien Mot de Passe</label><input id="old_password" name="old_password" pattern="\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*" required></fieldset>
             <fieldset><label>Nouveau Mot de Passe</label><input id="new_password" name="new_password" pattern="\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*" required></fieldset>
             <fieldset><label>Répétez Mot de Passe</label><input id="repeat_password" name="repeat_password" pattern="\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*" required></fieldset>
-            <input class="submit" type="submit" value="Modifier">
+            <div class="flex flexSpaceAround">
+                <input class="submit" type="submit" value="Modifier">
+                <div class="submit" id="cancelUpdatePassword">Annuler</div>
+            </div>
+            <div id="messageModifPassword"></div>
         </form>
-        <button class="submit" id="cancelUpdate" style="display:none;">Annuler</button>
-        <div id="message"></div>
     </div>
+    <div id="message"></div>
 </main>
 
 <?php include 'footer.php'; ?>

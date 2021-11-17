@@ -47,6 +47,12 @@
     echo "prenom.innerHTML = '<span>Prénom :</span> $prenom';";
     echo "pseudo.innerHTML = '<span>Pseudo :</span> $pseudo';";
     echo "mail.innerHTML = '<span>Mail :</span> $mail';";
+    //script js récupération du paragraphe #messageModifForm dans une variable "messageModifForm"
+    echo 'let messageModifForm = document.querySelector("#messageModifForm");';
+    //script js récupération du paragraphe #messageModifPassword dans une variable "messageModifPassword"
+    echo 'let messageModifPassword = document.querySelector("#messageModifPassword");';
+    //script js récupération du paragraphe #message dans une variable "message"
+    echo 'let message = document.querySelector("#message");';
     echo "</script>";
 
     /*-----------------------------------------------------
@@ -67,10 +73,8 @@
     //test si les champs sont vides
     if(!isset($_POST['modif_nom']) AND !isset($_POST['modif_prenom']) AND !isset($_POST['modif_pseudo']) AND !isset($_POST['modif_mail']))
     {   
-       //script js récupération du paragraphe #message dans une variable "message"
-       echo '<script>let message = document.querySelector("#message");';
        //script js remplacement du message
-       echo 'message.innerHTML = "Veuillez remplir les champs du formulaire";';
+       echo '<script>messageModifForm.innerHTML = "Veuillez remplir les champs du formulaire";';
        echo '</script>';
     }
     //test si les champs sont complétés
@@ -92,7 +96,7 @@
             header("Location: nexus.php?pseudoexist");
         }
         //test si le mail existe déjà et n'est pas celui de l'utilisateur
-        else if($user->showUser($bdd) && $modif_mail != $mail)
+        else if($user->showUserMail($bdd) && $modif_mail != $mail)
         {
             //redirection vers nexus.php?mailexist
             header("Location: nexus.php?mailexist");
@@ -106,11 +110,26 @@
             $_SESSION['firstNameUser'] =  $modif_prenom;
             $_SESSION['pseudoUser'] =  $modif_pseudo;
             $_SESSION['mailUser'] = $modif_mail;
-            //message de validation
+            //récupération du nouveau profil à afficher
+            $nom = $_SESSION['nameUser'];
+            $prenom = $_SESSION['firstNameUser'];
+            $pseudo = $_SESSION['pseudoUser'];
+            $mail = $_SESSION['mailUser'];
+            //message de validation et affichage du nouveau profil
             //script js
             echo '<script>';
             //script js remplacement du message
             echo 'message.innerHTML = "Votre profil a été modifié avec succès !!!";';
+            //script affichage nouveau profil
+            echo "nom.innerHTML = '<span>Nom :</span> $nom';";
+            echo "prenom.innerHTML = '<span>Prénom :</span> $prenom';";
+            echo "pseudo.innerHTML = '<span>Pseudo :</span> $pseudo';";
+            echo "mail.innerHTML = '<span>Mail :</span> $mail';";
+            //script préremplissage du nouveau formulaire de modification
+            echo "modif_nom.setAttribute('value', '$nom');";
+            echo "modif_prenom.setAttribute('value', '$prenom');";
+            echo "modif_pseudo.setAttribute('value', '$pseudo');";
+            echo "modif_mail.setAttribute('value', '$mail');";
             echo '</script>';
         }
     }
@@ -121,10 +140,8 @@
     //test si les champs sont vides
     if(!isset($_POST['old_password']) AND !isset($_POST['new_password']) AND !isset($_POST['repeat_password']))
     {   
-       //script js récupération du paragraphe #message dans une variable "message"
-       echo '<script>let message = document.querySelector("#message");';
        //script js remplacement du message
-       echo 'message.innerHTML = "Veuillez remplir les champs du formulaire";';
+       echo '<script>messageModifPassword.innerHTML = "Veuillez remplir les champs du formulaire";';
        echo '</script>';
     }
     //test si les champs sont complétés
@@ -178,7 +195,7 @@
     {   
         //script js
         echo '<script>';
-         //script js remplacement du message
+        //script js remplacement du message
         echo 'message.innerHTML = "Cette adresse mail existe déjà !!!";';
         echo '</script>';
     }
