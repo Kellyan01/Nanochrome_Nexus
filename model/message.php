@@ -249,6 +249,9 @@
                         }
                     }
                 }
+                //fermeture de la connexion
+                $bdd = null;
+                $reponse = null;
 
                 //retourne la liste des messages reçus
                 return $message_list_received;
@@ -317,7 +320,9 @@
                         }
                     }
                 }
-
+                //fermeture de la connexion
+                $bdd = null;
+                $reponse = null;
                 //retourne la liste des messages reçus
                 return $message_list_send;
             }
